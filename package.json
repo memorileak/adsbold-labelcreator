@@ -1,0 +1,17 @@
+{
+  "name": "adsbold-labelcreator",
+  "version": "1.2.3",
+  "description": "Tạo nhãn vận đơn cho adsbold app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "npm install canvas@1.6.11 jsbarcode@3.9.0 yaqrcode@0.2.1 --unsafe-perm"
+  },
+  "author": "Tung Nguyen",
+  "license": "ISC",
+  "dependencies": {
+    "canvas": "^1.6.11",
+    "jsbarcode": "^3.9.0",
+    "yaqrcode": "^0.2.1"
+  }
+}
