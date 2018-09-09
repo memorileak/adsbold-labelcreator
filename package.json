@@ -1,6 +1,6 @@
 {
   "name": "adsbold-labelcreator",
-  "version": "1.2.3",
+  "version": "1.3.0",
   "description": "Tạo nhãn vận đơn cho adsbold app",
   "main": "index.js",
   "scripts": {
