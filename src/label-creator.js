@@ -55,13 +55,22 @@ module.exports = (function () {
                         <title>Order label</title>
                         <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
                         <style type="text/css">
-                            .print-button {
-                                color: white;
-                                background-color: #18a689;
-                                border-color: #18a689;
-                                border-radius: 4px;
+                            .from-info {
+                                padding: 10px 5px;
                             }
-                    
+                            .font-bold {
+                                font-weight: bold;
+                            }
+                            .to-info-grid {
+                                display: grid;
+                                grid-template-columns: auto 100px;
+                            }
+                            .to-info-grid .item1{
+                                padding: 10px 0px 10px 5px;
+                            }
+                            .to-info-grid .item2{
+                                
+                            }
                             body {
                                 font-family: Roboto, Helvetica, Verdana, Arial, sans-serif;
                                 font-size: 14px;
@@ -73,14 +82,6 @@ module.exports = (function () {
                     
                             @page {
                                 size: A5 portrait;
-                            }
-                    
-                            .pleft {
-                                float: left;
-                            }
-                    
-                            .pright {
-                                float: right;
                             }
                     
                             .mainPrints {
@@ -101,23 +102,11 @@ module.exports = (function () {
                                 margin: 0;
                             }
                     
-                            .logo_cod_new {
-                                height: 60px;
-                                max-width: 200px;
-                                position: absolute;
-                                right: 0;
-                                top: 0;
-                            }
-                    
                             body {
                                 font-size: 13px;
                                 background-color: #FFF;
                             }
-                    
-                            .watermark {
-                                position: relative;
-                            }
-                    
+                            
                             .mainPrints {
                     
                                 width: 120mm !important;
@@ -162,7 +151,6 @@ module.exports = (function () {
                             }
                     
                             .tb-header1 {
-                                /* padding: 5px 0; */
                                 border-bottom: 1px solid #000;
                             }
                     
@@ -179,25 +167,23 @@ module.exports = (function () {
                     
                             .tb-header1 .col:nth-child(1) {
                                 border-right: 2px solid #000;
+                                padding: 10px 50px;
                             }
                     
                             .tb-header1 .col:nth-child(1) span {
                                 font-size: 20px;
                                 font-weight: bold;
                                 padding-top: 5px;
+                                padding-bottom: 5px;
                             }
                     
-                            /* .tb-header1 .col + .col {
-                            padding-top: 10px;
-                            } */
-                            .dochvu {
+                            .dichvu {
                                 padding-top: 7px
                             }
                     
                             .tb-header1 .col + .col span {
                                 font-weight: bold;
                                 font-size: 20px;
-                                /* padding: 7px 0; */
                                 border-right: 2px solid #000;
                             }
                     
@@ -207,14 +193,16 @@ module.exports = (function () {
                     
                             .tb-header2 {
                                 border-bottom: 1px solid #000;
+                                height: 50px;
                             }
                     
                             .tb-header2 .left {
                                 position: relative;
                                 letter-spacing: -1px;
                                 min-width: 50px;
+                                height: 100%;
                                 float: left;
-                                padding-left: 3px;
+                                padding: 10px 0px 10px 5px;
                             }
                     
                             .tb-header2 .left span {
@@ -227,8 +215,7 @@ module.exports = (function () {
                                 min-width: 50px;
                                 float: right;
                                 text-align: right;
-                                padding-right: 30px;
-                                /*padding-top: 3px;*/
+                                padding: 17px 30px 13px 0px;
                             }
                     
                             .tb-header3 {
@@ -238,8 +225,6 @@ module.exports = (function () {
                     
                             .tb-header3 .pic {
                                 text-align: center;
-                                /* padding-bottom: 10px;
-                                width: 80%;*/
                                 height: auto;
                             }
                     
@@ -260,10 +245,7 @@ module.exports = (function () {
                                 bottom: 0;
                                 left: 4px;
                             }
-                    
-                            /*.tb-header4 {
-                            margin-top: 2px;
-                            }*/
+                            
                             .tb-header4 .col {
                                 width: 50%;
                                 padding: 0px 0 0px 5px;
@@ -286,24 +268,6 @@ module.exports = (function () {
                                 border: none;
                                 font-size: 13px;
                                 margin-bottom: 0;
-                            }
-                    
-                            .col-65 {
-                                min-height: 37px;
-                                padding-top: 10px !important;
-                            }
-                    
-                            .col-35 {
-                                min-height: 48px;
-                                padding-top: 10px !important;
-                            }
-                    
-                            .price {
-                                margin-bottom: 10px;
-                            }
-                    
-                            .dress {
-                                padding-top: 10px;
                             }
                     
                             .tb-header3 .pic {
@@ -382,41 +346,14 @@ module.exports = (function () {
                             .tb-body {
                                 border: 3px solid #000;
                                 border-radius: 5px;
-                                /*margin: 0 1px;*/
-                                padding: 5px 5px 0px 6px;
+                                padding: 5px 5px;
                                 min-height: 120px;
-                            }
-                    
-                            .tb-body dl * {
-                                display: inline-block;
-                                vertical-align: middle;
-                            }
-                    
-                            .tb-body dl:nth-child(1) {
-                                font-size: 14px;
-                                font-weight: bold;
-                            }
-                    
-                            .tb-body dl:nth-child(1) dd {
-                                font-size: 24px;
-                    
-                            }
-                    
-                            .tb-body dl:nth-child(2) {
-                                margin-top: 0px;
-                            }
-                    
-                            .tb-body dl:nth-child(3) dd {
-                                font-size: 14px;
                             }
                     
                             .tracking_code {
                                 font-size: 19px;
                             }
                     
-                            /*			.dress {
-                                margin: 3px;
-                                }*/
                             .dress dl * {
                                 display: inline-block;
                                 vertical-align: middle;
@@ -436,7 +373,6 @@ module.exports = (function () {
                             }
                     
                             .chuky {
-                                margin-top: 10px !important;
                                 padding-top: 5px !important;
                                 height: 75px;
                             }
@@ -617,16 +553,14 @@ module.exports = (function () {
                                         <div id="table-box">
                                             <div class="tb-header1 clearfix">
                                                 <div class="col">
-                                                    <div class="dochvu">Dịch vụ</div>
-                                                    <span style="font-size: 14px;">
-                                                        </span>Chuyển phát nhanh
+                                                    <img style="width: 100%;height:34px" src="${logoURL}">
                                                 </div>
                                                 <div class="col">
-                                                    <div class="dochvu">Tỉnh phát</div>
+                                                    <div class="dichvu">Tỉnh phát</div>
                                                     <span>${OrderData.to_province}</span></div>
                                             </div>
                                             <div class="tb-header2 clearfix">
-                                                <div class="left">T. lượng (Gr)<span> ${OrderData.weight}</span></div>
+                                                <div class="left">Khối lượng (Gram):<span> ${OrderData.weight}</span></div>
                                                 <div class="right">Ngày gửi: ....../ ....../ ${(new Date()).getFullYear()}</div>
                                             </div>
                                             <div class="tb-header3" style="text-align: center;">
@@ -635,78 +569,58 @@ module.exports = (function () {
                                                 </p>
                                                 <span class="tracking_code" style="font-weight: bold;">${OrderData.transport_order_code}</span>
                                             </div>
-                                            <div class="tb-header4 clearfix">
-                                                <div class="col-65">
-                                                    <dl class="clearfix">
-                                                        <dt style="font-weight: bold;">NGƯỜI GỬI:&nbsp;${OrderData.from_name}</dt>
-                                                    </dl>
-                                                    <dl>
-                                                        <dt><span style="font-weight: bold;">ĐIỆN THOẠI:</span>&nbsp;
-                                                            <span style="font-weight: bold;">${OrderData.from_phone}</span>
-                                                        </dt>
-                                                    </dl>
+                                            <div class="from-info">
+                                                <div>
+                                                    NGƯỜI GỬI: <span style="font-size: 15px;" class="font-bold">${OrderData.from_name}</span>
                                                 </div>
-                                                <div class="col-35">
-                                                    <dl class="clearfix">
-                                                        <dt>
-                                                            <img style="width: 100px;height:34px" src="${logoURL}">
-                                                        </dt>
-                                                    </dl>
+                                                <div>
+                                                    ĐỊA CHỈ: <span style="font-size: 15px;" class="font-bold">${OrderData.from_address} ,${OrderData.from_ward}, ${OrderData.from_district}, ${OrderData.from_province}</span>
                                                 </div>
-                                                <div class="price" style="padding-left:5px;">
-                                                    <dt>ĐỊA CHỈ:&nbsp; ${OrderData.from_address} ,${OrderData.from_ward},
-                                                        ${OrderData.from_district}, ${OrderData.from_province}
-                                                    </dt>
+                                                <div>
+                                                    ĐIỆN THOẠI:&nbsp;&nbsp;<span style="font-size: 20px;" class="font-bold">${OrderData.from_phone}</span>
                                                 </div>
                                             </div>
                                             <div class="tb-body">
-                                                <dl class="clearfix">
-                                                    <dt style="font-weight: bold;">Tiền thu hộ:</dt>
-                                                    <dd> ${OrderData.cod}</dd>
-                                                    <dt style="font-weight: bold;">&nbsp;&nbsp;Số lượng:</dt>
-                                                    <dd> ${OrderData.quantity}</dd>
-                                                </dl>
-                                                <dl class="clearfix">
-                                                    <dt style="font-weight: bold;margin-top: -6px;">NỘI DUNG:&nbsp;
-                                                        <span style="font-weight: bold;">${OrderData.content}</span>
-                                                    </dt>
-                                                    <!-- <dd></dd> -->
-                                                </dl>
-                                                <dl class="clearfix" style="line-height: 0px;">
-                                                    <dt style="font-weight: bold;">Giá trị
-                                                        hàng:&nbsp;<strong>${OrderData.product_value}đ</strong></dt>
-                                                    <!-- <dd>đ</dd> -->
-                                                </dl>
-                                            </div>
-                                            <div class="dress">
-                                                <div class="col" style="width: 79%;float:left;min-height:98px">
-                                                    <dl class="clearfix">
-                                                        <dt style="font-weight: bold;">NGƯỜI NHẬN:&nbsp;${OrderData.to_name}</dt>
-                                                        <dt style="font-weight: bold;width: 100%;">ĐỊA CHỈ:&nbsp;${OrderData.to_address},
-                                                            ${OrderData.to_ward}, ${OrderData.to_district}, ${OrderData.to_province}
-                                                        </dt>
-                                                        <!-- <dt style="font-weight: bold;width: 100%;white-space: nowrap;">Huyên Yên Lạc,Vĩnh Phúc</dt> -->
-                                                        <dt><span style="font-weight: bold;">ĐIỆN THOẠI:</span> &nbsp;<span
-                                                                style="font-size: 20px;font-weight: bold;">${OrderData.to_phone}</span></dt>
-                                                        <!-- <dd></dd> -->
-                                                    </dl>
+                                                <div>
+                                                    SỐ LƯỢNG: <span style="font-size: 20px" class="font-bold">${OrderData.quantity}</span>
                                                 </div>
-                                                <div style="width:20%;float:left;min-height:98px">
+                                                <div>
+                                                    NỘI DUNG: <span style="font-size: 14px" class="font-bold">${OrderData.content}</span>
+                                                </div>
+                                                <div>
+                                                    GIÁ TRỊ HÀNG: <span style="font-size: 16px" class="font-bold">${OrderData.product_value} đ</span>
+                                                </div>
+                                                <div>
+                                                    TIỀN THU HỘ: <span style="font-size: 24px" class="font-bold">${OrderData.cod} đ</span>
+                                                </div>
+                                            </div>
+                                            <div class="to-info-grid">
+                                                <div class="item1">
+                                                    <div>
+                                                        NGƯỜI NHẬN:&nbsp;&nbsp;<span style="font-size: 15px;" class="font-bold">${OrderData.to_name}</span>
+                                                    </div>
+                                                    <div>
+                                                        ĐỊA CHỈ:&nbsp;<span style="font-size: 15px;" class="font-bold">${OrderData.to_address}, ${OrderData.to_ward}, ${OrderData.to_district}, ${OrderData.to_province}</span>
+                                                    </div>
+                                                    <div>
+                                                        ĐIỆN THOẠI:&nbsp;&nbsp;<span style="font-size: 20px;" class="font-bold">${OrderData.to_phone}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="item2">
                                                     <img style="width: 100%; padding: 10px" src="${qrcodeStr}"/>
                                                 </div>
-                                                <br>
-                                                <div class="tb-header1 clearfix ">
-                                                    <div class="col chuky" style="border-top: 1px solid #000;margin-top: -6px;">
-                                                        <div class="">Chử ký bưu tá (BC)</div>
-                                                    </div>
-                                                    <div class="col chuky" style="border-top: 1px solid #000;margin-top: -6px;">
-                                                        <div class="">Chử ký người nhận</div>
-                                                    </div>
+                                            </div>
+                                            <div class="tb-header1 clearfix ">
+                                                <div class="col chuky" style="border-top: 1px solid #000;">
+                                                    <div class="">Chử ký bưu tá (BC)</div>
                                                 </div>
-                                                <div class="code clearfix">
-                                                    <div class="left">
-                                                        <p class="title" style="margin-bottom: 0px;">PHIẾU GỬI</p>
-                                                    </div>
+                                                <div class="col chuky" style="border-top: 1px solid #000;">
+                                                    <div class="">Chử ký người nhận</div>
+                                                </div>
+                                            </div>
+                                            <div class="code clearfix">
+                                                <div class="left">
+                                                    <p class="title" style="margin-bottom: 0px;">PHIẾU GỬI</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -718,7 +632,7 @@ module.exports = (function () {
                             <button class="btn bg-primary btn_print no-shadow pos-abt hidden-print" onclick="window.print();"><i class="fa fa-print"></i> In vận đơn</button>
                         </div>
                     </body>
-                    </html>	
+                    </html>
                 `);
             }
         }
