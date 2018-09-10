@@ -574,7 +574,7 @@ module.exports = (function () {
                                             <div class="pack-info-grid">
                                                 <div class="item1">
                                                     <div>
-                                                        SỐ LƯỢNG: <span style="font-size: 20px" class="font-bold">${OrderData.quantity}</span>
+                                                        SỐ LƯỢNG: <span style="font-size: 19px" class="font-bold">${OrderData.quantity}</span>
                                                     </div>
                                                     <div>
                                                         NỘI DUNG: <span style="font-size: 14px" class="font-bold">${OrderData.content}</span>
