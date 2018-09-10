@@ -12,6 +12,7 @@ const adsboldLabelcreator = require('adsbold-labelcreator');
 const label = adsboldLabelcreator.createLabelWithPrintButton({
     provider_name: 'FRANK_MARTIN',
     transport_order_code: 'VT12345678',
+    service_type: 'Nhanh không kịp hủy',
 
     from_province: 'Hồ Chí Minh',
     from_district: 'Quận Thủ Đức',
@@ -35,7 +36,7 @@ const label = adsboldLabelcreator.createLabelWithPrintButton({
 
     custom_logo: {
         FRANK_MARTIN: '/images/frank-martin.png',
-        SLOW_DELIVER: '/images/slow-deliver.png'
+        SLOW_DELIVERY: '/images/slow-delivery.png'
     }
 });
 ```
@@ -45,4 +46,4 @@ Trường custom_logo là một object với key là tên nhà vận chuyển (`
 
 ### Migrate:
 Từ phiên bản 1.1.0 trở đi, logo của các nhà vận chuyển VIETTEL, SHIPCHUNG, GHN, GHTK đã được tích hợp sẵn. Khi đặt `provider_name` là tên của một trong những nhà vận chuyển này, bạn không cần thêm `custom_logo` nữa.\
-Từ phiên bản 1.2.0 trở đi, bỏ trường `service_type`.
+Từ phiên bản 1.4.0 trở đi, trường `service_type` là optional, có thể có hoặc không đều được.

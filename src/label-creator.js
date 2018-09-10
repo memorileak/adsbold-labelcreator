@@ -7,6 +7,7 @@ const logo = require('./logo.json');
  * The OrderData including:
  *  - provider_name
  *  - transport_order_code
+ *  - service_type
  *
  *  - from_province
  *  - from_district
@@ -55,21 +56,43 @@ module.exports = (function () {
                         <title>Order label</title>
                         <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
                         <style type="text/css">
-                            .from-info {
-                                padding: 10px 5px;
-                            }
                             .font-bold {
                                 font-weight: bold;
                             }
-                            .to-info-grid {
+                            .from-info {
+                                padding: 10px 5px;
+                            }
+                            .to-info {
+                                padding: 10px 5px;
+                            }
+                            .pack-info-grid {
                                 display: grid;
                                 grid-template-columns: auto 100px;
+                                grid-template-rows: auto;
+                                border-top: 1px solid black;
+                                border-bottom: 1px solid black;
+                                min-height: 120px;
                             }
-                            .to-info-grid .item1{
+                            .pack-info-grid .item1{
                                 padding: 10px 0px 10px 5px;
                             }
-                            .to-info-grid .item2{
+                            .pack-info-grid .item2{
                                 
+                            }
+                            .service-grid {
+                                display: grid;
+                                grid-template-columns: 263px auto;
+                                grid-template-rows: 55px;
+                                border-bottom: 1px solid black;
+                            }
+                            .service-grid .item1 {
+                                display: flex;
+                                align-items: center;
+                                padding-left: 5px;
+                            }
+                            .service-grid .item2 {
+                                display: flex;
+                                align-items: center;
                             }
                             body {
                                 font-family: Roboto, Helvetica, Verdana, Arial, sans-serif;
@@ -189,33 +212,6 @@ module.exports = (function () {
                     
                             .tb-header1 .col:last-child span {
                                 border: none;
-                            }
-                    
-                            .tb-header2 {
-                                border-bottom: 1px solid #000;
-                                height: 50px;
-                            }
-                    
-                            .tb-header2 .left {
-                                position: relative;
-                                letter-spacing: -1px;
-                                min-width: 50px;
-                                height: 100%;
-                                float: left;
-                                padding: 10px 0px 10px 5px;
-                            }
-                    
-                            .tb-header2 .left span {
-                                font-size: 20px;
-                                font-weight: bold;
-                                padding-left: 10px;
-                            }
-                    
-                            .tb-header2 .right {
-                                min-width: 50px;
-                                float: right;
-                                text-align: right;
-                                padding: 17px 30px 13px 0px;
                             }
                     
                             .tb-header3 {
@@ -343,13 +339,6 @@ module.exports = (function () {
                                 font-weight: bold;
                             }
                     
-                            .tb-body {
-                                border: 3px solid #000;
-                                border-radius: 5px;
-                                padding: 5px 5px;
-                                min-height: 120px;
-                            }
-                    
                             .tracking_code {
                                 font-size: 19px;
                             }
@@ -409,13 +398,6 @@ module.exports = (function () {
                             .code .right .number {
                                 font-size: 12px;
                                 letter-spacing: 1px;
-                            }
-                    
-                            .tb-footer {
-                                /* margin-top: 5px;*/
-                                border-top: 1px solid #000;
-                                text-align: center;
-                                padding-top: 3px;
                             }
                     
                             dl {
@@ -559,9 +541,18 @@ module.exports = (function () {
                                                     <div class="dichvu">Tỉnh phát</div>
                                                     <span>${OrderData.to_province}</span></div>
                                             </div>
-                                            <div class="tb-header2 clearfix">
-                                                <div class="left">Khối lượng (Gram):<span> ${OrderData.weight}</span></div>
-                                                <div class="right">Ngày gửi: ....../ ....../ ${(new Date()).getFullYear()}</div>
+                                            <div class="service-grid">
+                                                <div class="item1">
+                                                    <div>
+                                                        ${
+                                                            OrderData.service_type 
+                                                            ? `<div>Dịch vụ:<span style="font-size: 14px" class="font-bold"> ${OrderData.service_type}</span></div>`
+                                                            : ``
+                                                        }
+                                                        <div>Khối lượng (Gram):<span style="font-size: 17px" class="font-bold"> ${OrderData.weight}</span></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item2">Ngày gửi: ....../ ....../ ${(new Date()).getFullYear()}</div>
                                             </div>
                                             <div class="tb-header3" style="text-align: center;">
                                                 <p class="pic" style="margin: 0 0 0px">
@@ -580,34 +571,34 @@ module.exports = (function () {
                                                     ĐIỆN THOẠI:&nbsp;&nbsp;<span style="font-size: 20px;" class="font-bold">${OrderData.from_phone}</span>
                                                 </div>
                                             </div>
-                                            <div class="tb-body">
-                                                <div>
-                                                    SỐ LƯỢNG: <span style="font-size: 20px" class="font-bold">${OrderData.quantity}</span>
-                                                </div>
-                                                <div>
-                                                    NỘI DUNG: <span style="font-size: 14px" class="font-bold">${OrderData.content}</span>
-                                                </div>
-                                                <div>
-                                                    GIÁ TRỊ HÀNG: <span style="font-size: 16px" class="font-bold">${OrderData.product_value} đ</span>
-                                                </div>
-                                                <div>
-                                                    TIỀN THU HỘ: <span style="font-size: 24px" class="font-bold">${OrderData.cod} đ</span>
-                                                </div>
-                                            </div>
-                                            <div class="to-info-grid">
+                                            <div class="pack-info-grid">
                                                 <div class="item1">
                                                     <div>
-                                                        NGƯỜI NHẬN:&nbsp;&nbsp;<span style="font-size: 15px;" class="font-bold">${OrderData.to_name}</span>
+                                                        SỐ LƯỢNG: <span style="font-size: 20px" class="font-bold">${OrderData.quantity}</span>
                                                     </div>
                                                     <div>
-                                                        ĐỊA CHỈ:&nbsp;<span style="font-size: 15px;" class="font-bold">${OrderData.to_address}, ${OrderData.to_ward}, ${OrderData.to_district}, ${OrderData.to_province}</span>
+                                                        NỘI DUNG: <span style="font-size: 14px" class="font-bold">${OrderData.content}</span>
                                                     </div>
                                                     <div>
-                                                        ĐIỆN THOẠI:&nbsp;&nbsp;<span style="font-size: 20px;" class="font-bold">${OrderData.to_phone}</span>
+                                                        GIÁ TRỊ HÀNG: <span style="font-size: 16px" class="font-bold">${OrderData.product_value} đ</span>
+                                                    </div>
+                                                    <div>
+                                                        TIỀN THU HỘ: <span style="font-size: 24px" class="font-bold">${OrderData.cod} đ</span>
                                                     </div>
                                                 </div>
                                                 <div class="item2">
                                                     <img style="width: 100%; padding: 10px" src="${qrcodeStr}"/>
+                                                </div>
+                                            </div>
+                                            <div class="to-info">
+                                                <div>
+                                                    NGƯỜI NHẬN:&nbsp;&nbsp;<span style="font-size: 15px;" class="font-bold">${OrderData.to_name}</span>
+                                                </div>
+                                                <div>
+                                                    ĐỊA CHỈ:&nbsp;<span style="font-size: 15px;" class="font-bold">${OrderData.to_address}, ${OrderData.to_ward}, ${OrderData.to_district}, ${OrderData.to_province}</span>
+                                                </div>
+                                                <div>
+                                                    ĐIỆN THOẠI:&nbsp;&nbsp;<span style="font-size: 20px;" class="font-bold">${OrderData.to_phone}</span>
                                                 </div>
                                             </div>
                                             <div class="tb-header1 clearfix ">
@@ -632,7 +623,7 @@ module.exports = (function () {
                             <button class="btn bg-primary btn_print no-shadow pos-abt hidden-print" onclick="window.print();"><i class="fa fa-print"></i> In vận đơn</button>
                         </div>
                     </body>
-                    </html>
+                    </html>	
                 `);
             }
         }
