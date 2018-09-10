@@ -42,7 +42,7 @@ const label = adsboldLabelcreator.createLabelWithPrintButton({
 ```
 Phương thức `createLabelWithPrintButton` trả về một html string.\
 Các trường của object truyền vào hàm phải đúng tên.\
-Trường custom_logo là một object với key là tên nhà vận chuyển (`provider_name`), value là link tới logo của nhà vận chuyển.
+Trường `custom_logo` là một object với key là tên nhà vận chuyển (`provider_name`), value là link tới logo của nhà vận chuyển.
 
 ### Migrate:
 Từ phiên bản 1.1.0 trở đi, logo của các nhà vận chuyển VIETTEL, SHIPCHUNG, GHN, GHTK đã được tích hợp sẵn. Khi đặt `provider_name` là tên của một trong những nhà vận chuyển này, bạn không cần thêm `custom_logo` nữa.\
