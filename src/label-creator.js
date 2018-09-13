@@ -54,7 +54,7 @@ module.exports = (function () {
                     <html>
                     <head>
                         <title>Order label</title>
-                        <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+                        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" type="text/css">
                         <style type="text/css">
                             .font-bold {
                                 font-weight: bold;
@@ -95,7 +95,7 @@ module.exports = (function () {
                                 align-items: center;
                             }
                             body {
-                                font-family: Roboto, Helvetica, Verdana, Arial, sans-serif;
+                                font-family: "open sans", Helvetica, Verdana, Arial, sans-serif;
                                 font-size: 14px;
                                 color: #58666e;
                                 background-color: transparent;
@@ -142,22 +142,20 @@ module.exports = (function () {
                     
                             @media print {
                                 body {
-                                    font-family: Arial, Helvetica, sans-serif;
+                                    font-family: "open sans", Helvetica, Verdana, Arial, sans-serif;
                                 }
                             }
                     
                             * {
                                 box-sizing: border-box;
-                                font-family: Arial, Helvetica, sans-serif;
-                                font-weight: 100;
-                    
+                                font-family: "open sans", Helvetica, Verdana, Arial, sans-serif;
                             }
                     
                             body {
                                 margin: 0 auto;
                                 padding: 0;
                                 box-sizing: border-box;
-                                font-family: Arial, Helvetica, sans-serif;
+                                font-family: "open sans", Helvetica, Verdana, Arial, sans-serif;
                                 -webkit-font-smoothing: antialiased;
                             }
                     
