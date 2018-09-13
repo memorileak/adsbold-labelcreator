@@ -601,10 +601,10 @@ module.exports = (function () {
                                             </div>
                                             <div class="tb-header1 clearfix ">
                                                 <div class="col chuky" style="border-top: 1px solid #000;">
-                                                    <div class="">Chử ký bưu tá (BC)</div>
+                                                    <div class="">Chữ ký bưu tá (BC)</div>
                                                 </div>
                                                 <div class="col chuky" style="border-top: 1px solid #000;">
-                                                    <div class="">Chử ký người nhận</div>
+                                                    <div class="">Chữ ký người nhận</div>
                                                 </div>
                                             </div>
                                             <div class="code clearfix">
