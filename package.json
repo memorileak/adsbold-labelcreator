@@ -5,13 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "preinstall": "npm install canvas@1.6.11 jsbarcode@3.9.0 yaqrcode@0.2.1"
+    "preinstall": "npm install io-barcode@1.3.0 yaqrcode@0.2.1"
   },
   "author": "Tung Nguyen",
   "license": "ISC",
   "dependencies": {
-    "canvas": "^1.6.11",
-    "jsbarcode": "^3.9.0",
+    "io-barcode": "^1.3.0",
     "yaqrcode": "^0.2.1"
   }
 }

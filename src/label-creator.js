@@ -1,7 +1,6 @@
 const qrcode = require('yaqrcode');
-const Canvas = require('canvas');
-const jsbarcode = require('jsbarcode');
 const logo = require('./logo.json');
+const ioBarcode = require('io-barcode');
 /**
  * @param OrderData: contains all data passing into function to create the label
  * The OrderData including:
@@ -42,12 +41,9 @@ module.exports = (function () {
                     ? logo[OrderData.provider_name]
                     : customLogoURL;
                 const qrcodeStr = qrcode(OrderData.transport_order_code);
-                const canvas = new Canvas();
-                jsbarcode(canvas, OrderData.transport_order_code, {
-                    format: 'CODE128',
-                    width: 260,
-                    height: 190,
-                    displayValue: false
+                const canvas = ioBarcode.CODE128B(OrderData.transport_order_code, {
+                    width: 2,
+                    height: 10
                 });
                 const barcodeStr = canvas.toDataURL("image/png");
                 return (`
@@ -269,7 +265,7 @@ module.exports = (function () {
                             }
                     
                             .tb-header3 .pic img {
-                                width: 350px !important;
+                                width: 432px !important;
                                 height: 50px !important;
                             }
                     
@@ -554,7 +550,7 @@ module.exports = (function () {
                                             </div>
                                             <div class="tb-header3" style="text-align: center;">
                                                 <p class="pic" style="margin: 0 0 0px">
-                                                    <img style="width: 260px;height: 33px;" src="${barcodeStr}"/>
+                                                    <img src="${barcodeStr}"/>
                                                 </p>
                                                 <span class="tracking_code" style="font-weight: bold;">${OrderData.transport_order_code}</span>
                                             </div>
